@@ -246,30 +246,20 @@ module.exports = {
 
   // SHOW CALENDAR
   cal: (req, res) => {
-      ChoresModel.find( {},
-          function(err, result) {
-              if (err) {
-                  res.send(err)
-              }
-              else {
+    ChoresModel.find( {},
+        function(err, result) {
+            if (err) {
+                res.send(err)
+            }
+            else {
+                res.render('calendar', {chores: result})
+            }
+        }
+    )
 
-                const calendarItems = result.map(chore => {
-                  return {
-                    title: `${chore.chorename}`,
-                    start: `${chore.date}`,
-                  }
+  // res.render('calendar', {chores: chores})
 
-
-                })
-                console.log(calendarItems)
-                res.render('calendar', {chores: result, calendarItems})
-              }
-          }
-      )
-
-    // res.render('calendar', {chores: chores})
-
-  },
+},
 
 
 }
