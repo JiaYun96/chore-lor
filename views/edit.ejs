@@ -1,0 +1,158 @@
+<!--Include Header-->
+<%- include('./partials/head') %>
+<!--/Include Header-->
+
+
+    <!--Main Site-->
+    <main id="site-main">
+    <div class="container">
+                <a href="/chorelor/cal" class="naviButtonCal"><i class="far fa-calendar-alt"></i></a>
+                <a href="/chorelor" class="naviButton"><i class="far fa-list-alt"></i> LIST ALL CHORES</a>
+
+    <!--Header-->
+    <div class="page-title">
+    <h1 class="subheader">Edit Existing Chore <i class="far fa-edit"></i></h1>
+    <h3 class="subsubheader">Eh mai siaosiao, don't anyhow ah! Later jialat!</h3>
+    </div>
+    <!--/Header-->
+
+
+    <!--Include Form Questions-->
+    <div class = content-outline>
+        <!--Form Handling-->
+        <form action="/chorelor/<%= chores._id %>?_method=PATCH" method="post">
+        <div class="new-chore">
+            
+            <!--1. Date Component-->
+            <div class="form">
+                <label for="date" class="question">When is Chore Due?</label>
+                <input type="date" name="date" value="<%= chores.date %>" placeholder="DD/MM/YY">
+            </div>
+        
+        </br>
+        
+            <!--2. Chore Name Component-->
+            <div class="form">
+                <label for="chorename" class="question">Chore Name</label>
+                <input type="text" name="chorename" value="<%= chores.chorename %>" placeholder="">
+            </div>
+        
+        </br>
+        
+            <!--3. House Area Component-->
+            <div class="form">
+                <label for="housearea" class="question">House Area</label>
+                
+                <!--3A. Kitchen-->
+                <div class="radio inline">
+                    <input type="radio" name="housearea" value="Kitchen" <%= chores.housearea == 'Kitchen' ? 'checked' : '' %>>
+                    <label for="housearea" class="text-light"> Kitchen <i class="fas fa-coffee"></i></label>
+                </div>
+            
+                <!--3B. Living Room-->
+                <div class="radio inline">
+                    <input type="radio" name="housearea" value="Living Room"<%= chores.housearea == 'Living Room' ? 'checked' : '' %>>
+                    <label for="housearea" class="text-light"> Living Room <i class="fas fa-couch"></i></label>
+                </div>
+        
+                <!--3C. Toilet-->
+                <div class="radio inline">
+                    <input type="radio" name="housearea" value="Toilet" <%= chores.housearea == 'Toilet' ? 'checked' : '' %>>
+                    <label for="housearea" class="text-light"> Toilet <i class="fas fa-shower"></i></label>
+                </div>
+        
+                <!--3D. Bedroom-->
+                <div class="radio inline">
+                    <input type="radio" name="housearea" value="Bedroom" <%= chores.housearea == 'Bedroom' ? 'checked' : '' %>>
+                    <label for="housearea" class="text-light"> Bedroom <i class="fas fa-bed"></i></label>
+                </div>
+        
+                <!--3E. Balcony-->
+                <div class="radio inline">
+                    <input type="radio" name="housearea" value="Balcony" <%= chores.housearea == 'Balcony' ? 'checked' : '' %>>
+                    <label for="housearea" class="text-light"> Balcony <i class="fas fa-sun"></i></label>
+                </div>
+                
+                <!--3E. Others-->
+                <div class="radio inline">
+                    <input type="radio" name="housearea" value="Others" <%= chores.housearea == 'Others' ? 'checked' : '' %>>
+                    <label for="housearea" class="text-light"> Others <i class="fas fa-box-open"></i></label>
+                </div>
+            </div>
+        
+        </br>
+        
+            <!--4. Timestart Component-->
+            <!-- <div class="form">
+                <label for="starttime" class="question">Projected Start Time</label>
+                <input type="datetime-local" name="starttime" value="<%= chores.starttime %>" placeholder="Time Start">
+            </div>       -->
+            <div class="form">
+                <label for="starttime" class="question">Projected End Time</label>
+                <input type="datetime-local" name="starttime" value="<%= new Date(chores.starttime).toISOString().substring(0, 19) %>" placeholder="Time Start">
+            </div>
+            
+        </br>
+
+            <!--5. Timeend Component-->
+            <!-- <div class="form">
+                <label for="endtime" class="question">Projected End Time</label>
+                <input type="datetime-local" name="endtime" value="<%= chores.endtime %>" placeholder="Time End">
+            </div> -->
+            <div class="form">
+                <label for="endtime" class="question">Projected End Time</label>
+                <input type="datetime-local" name="endtime" value="<%= new Date(chores.endtime).toISOString().substring(0, 19) %>" placeholder="Time End">
+            </div>
+                
+        </br>
+        
+            <!--6. Chore Completion Status Component-->
+            <div class="form">
+                <label for="status" class="question">Status</label>
+                
+                <!--6A. Pending-->
+                <div class="radio statuspending inline">
+                    <input type="radio" name="status" value="Pending" <%= chores.status == 'Pending' ? 'checked' : '' %>>
+                    <label for="status" class="status"> Pending <i class="far fa-clock"></i></label>
+                </div>
+            
+                <!--6B. Postpone-->
+                <div class="radio statuspostpone inline">
+                    <input type="radio" name="status" value="Not Completed" <%= chores.status == 'Not Completed' ? 'checked' : '' %>>
+                    <label for="status" class="status"> Not Completed <i class="far fa-calendar-times"></i></i></label>
+                </div>
+        
+                <!--6C. Completed-->
+                <div class="radio statuscompleted inline">
+                    <input type="radio" name="status" value="Completed" <%= chores.status == 'Completed' ? 'checked' : '' %>>
+                    <label for="status" class="status"> Completed <i class="far fa-calendar-check"></i></i></label>
+                </div>
+            </div>
+<br>
+            <!--7. Comments-->
+            <div class="form">
+                <label for="comments" class="question">Comments</label>
+                <input type="text" name="comments" value="<%= chores.comments %>" placeholder="">
+            </div>
+        
+        </br>    
+        
+            <!--SUBMIT BUTTON-->
+            <div class="form">
+                <button type="submit" class="submitchoreButton">UPDATE THIS CHORE</button>
+            </div>
+        
+        </form>
+        </div>
+        
+        </div>
+        </main>
+        <!--/Main Site-->
+        
+        
+    <!--/Include Form Questions-->
+
+
+<!--Include Footer-->
+<%- include('./partials/footer') %>
+<!--/Include Footer-->

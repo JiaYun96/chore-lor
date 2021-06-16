@@ -1,0 +1,125 @@
+<div class = content-outline>
+<!--Form Handling-->
+<form method="POST" action="/chorelor/add" id="add-chore">
+<div class="new-chore">
+    
+    <!--1. Date Component-->
+    <div class="form">
+        <label for="date" class="question">When is Chore Due?</label>
+        <input type="date" name="date" value="" placeholder="DD/MM/YY">
+    </div>
+
+</br>
+
+    <!--2. Chore Name Component-->
+    <div class="form">
+        <label for="chorename" class="question">Chore Name</label>
+        <input type="text" name="chorename" value="" placeholder="">
+    </div>
+
+</br>
+
+    <!--3. House Area Component-->
+    <div class="form">
+        <label for="housearea" class="question">House Area</label>
+        
+        <!--3A. Kitchen-->
+        <div class="radio inline">
+            <input type="radio" name="housearea" value="Kitchen">
+            <label for="housearea" class="text-light"> Kitchen <i class="fas fa-coffee"></i></label>
+        </div>
+    
+        <!--3B. Living Room-->
+        <div class="radio inline">
+            <input type="radio" name="housearea" value="Living Room">
+            <label for="housearea" class="text-light"> Living Room <i class="fas fa-couch"></i></label>
+        </div>
+
+        <!--3C. Toilet-->
+        <div class="radio inline">
+            <input type="radio" name="housearea" value="Toilet">
+            <label for="housearea" class="text-light"> Toilet <i class="fas fa-shower"></i></label>
+        </div>
+
+        <!--3D. Bedroom-->
+        <div class="radio inline">
+            <input type="radio" name="housearea" value="Bedroom">
+            <label for="housearea" class="text-light"> Bedroom <i class="fas fa-bed"></i></label>
+        </div>
+
+        <!--3E. Balcony-->
+        <div class="radio inline">
+            <input type="radio" name="housearea" value="Balcony">
+            <label for="housearea" class="text-light"> Balcony <i class="fas fa-sun"></i></label>
+        </div>
+        
+        <!--3E. Others-->
+        <div class="radio inline">
+            <input type="radio" name="housearea" value="Others">
+            <label for="housearea" class="text-light"> Others <i class="fas fa-box-open"></i></label>
+        </div>
+    </div>
+
+</br>
+
+    <!--4. Timestart Component-->
+    <div class="form">
+        <label for="starttime" class="question">Projected Start Time</label>
+        <input type="datetime-local" name="starttime" value="" placeholder="Time Start">
+    </div>
+
+</br>
+
+    <!--5. Timeend Component-->
+    <div class="form">
+        <label for="endtime" class="question">Projected End Time</label>
+        <input type="datetime-local" name="endtime" value="" placeholder="Time End">
+    </div>
+
+</br>
+
+    <!--6. Chore Completion Status Component-->
+    <div class="form">
+        <label for="status" class="question">Status</label>
+        
+        <!--6A. Pending-->
+        <div class="radio statuspending inline">
+            <input type="radio" name="status" value="Pending">
+            <label for="status" class="status"> Pending <i class="far fa-clock"></i></label>
+        </div>
+    
+        <!--6B. Postpone-->
+        <div class="radio statuspostpone inline">
+            <input type="radio" name="status" value="Not Completed">
+            <label for="status" class="status"> Not Completed <i class="far fa-calendar-times"></i></label>
+        </div>
+
+        <!--6C. Completed-->
+        <div class="radio statuscompleted inline">
+            <input type="radio" name="status" value="Completed">
+            <label for="status" class="status"> Completed <i class="far fa-calendar-check"></i></label>
+        </div>
+    </div>
+
+</br>
+
+    <!--7. Comments-->
+    <div class="form">
+        <label for="comments" class="question">Comments</label>
+        <input type="text" name="comments" value="" placeholder="Mandatory">
+    </div>
+
+</br>    
+
+    <!--SUBMIT BUTTON-->
+    <div class="form">
+        <button type="submit" class="submitchoreButton">SAVE NEW CHORE</button>
+    </div>
+
+</form>
+</div>
+
+</div>
+</main>
+<!--/Main Site-->
+

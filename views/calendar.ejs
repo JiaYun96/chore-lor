@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link to CSS-->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href='/fullcalendar-5.7.2/lib/main.css' rel='stylesheet' />
+    <script src="/scripts/moment.min.js"></script>
+    <script src="/scripts/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.0.1/fullcalendar.min.js"></script>
+    <script src='/fullcalendar-5.7.2/lib/main.js'></script>
+
+
+
+
+
+    <title>CHORE-LOR!</title>
+</head>
+
+<body>
+
+
+<!--Header-->
+<header id="header">
+    <div class="container">
+        <div class="app-title">
+            <h1><a href="/chorelor"  class="app-title-header"></i> Chore-Lor! <i class="far fa-dizzy"></i></a></h1>
+        </div>
+
+    </div>
+</header>
+
+<div class="BLACKLINE">Hi</div>
+
+<div class="container">
+
+    <div class="quick-bar"> Quick Navigation Filters
+        <a href="/chorelor/pending" class="quickButton">Pending  <i class="far fa-clock"></i></a>
+        <a href="/chorelor/notcompleted" class="quickButton">Not Completed <i class="far fa-calendar-times"></i></a>
+        <a href="/chorelor/completed" class="quickButton">Completed <i class="far fa-calendar-check"></i></a>
+        <a href="/chorelor/duesoon" class="quickButton">Almost Due Soon <i class="fas fa-tired"></i></a>
+        <br>
+        <br>
+        <form action="/chorelor/search" method="GET" class="form-inline">
+            <div class="form-group">SEARCH ALL CHORES HERE <i class="fas fa-search"></i>
+                <input type="text" name="search" placeholder="Type here" class="form-control searchBar">
+                <input type="submit" value="Quickly press lah" class="searchButton">
+            </div>
+        </form>
+    </div>
+
+
+
+    <main id="site-main">
+        <div class="container">
+            <a href="/chorelor/cal" class="naviButtonCal"><i class="far fa-calendar-alt"></i></a>
+            <a href="/chorelor/add" class="naviButton"><i class="fas fa-plus-circle"></i> ADD NEW CHORE </a>
+
+            <!-- Header-->
+            <div class="page-title">
+                <h1 class="subheader">Calendar View <i class="far fa-calendar-alt"></i></h1>
+                <h3 class="subsubheader">Take Another Look?</h3>
+            </div>
+            <!--/Header-->
+
+            <div class = content-outline>
+                <div id='calendar'></div>
+            </div>
+    </main>
+
+</div>
+<script>
+  var calendarItems = '<%= calendarItems %>';
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('calendar');
+
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    initialDate: '2021-06-07',
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay'
+    },
+
+
+    events: 
+          [
+    <% for(var i = 0; i < chores.length; i++) { %>
+      {
+        title: '<%= chores[i].chorename %>',
+        start: '<%= chores[i].date %>',
+      },
+    <% } %>
+          ]
+  });
+
+  calendar.render();
+});
+
+
+  </script>
+
+
+</body>
+
+    </html>
+
+
+    <!--/Header-->
+
+
+    <!--/Header-->
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang='en'>
+
+    <head>
+      <meta charset='utf-8' />
+      <link href='/public/fullcalendar-5.7.2/lib/main.css' rel='stylesheet' />
+      <script src='/public/fullcalendar-5.7.2/lib/main.js'></script>
+    </head>
+
+      <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+          var calendarEl = document.getElementById('calendar');
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth'
+          });
+          calendar.render();
+        });
+
+      </script> -->

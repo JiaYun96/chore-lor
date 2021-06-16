@@ -1,0 +1,47 @@
+<!--Include Header-->
+<%- include('./partials/head') %>
+<!--/Include Header-->
+
+<!--Main Site-->
+
+<main id="site-main">
+    <div class="container">
+            <a href="/chorelor/cal" class="naviButtonCal"><i class="far fa-calendar-alt"></i></a>
+            <a href="/chorelor/add" class="naviButton"><i class="fas fa-plus-circle"></i> ADD NEW CHORE </a>
+
+    <!-- Header-->
+    <div class="page-title">
+    <h1 class="subheader error"><i class="fas fa-exclamation-triangle"></i> ERROR <i class="fas fa-exclamation-triangle"></i></h1>
+    <h3 class="subsubheader error">What you want do now?</h3>
+    </div>
+    <!--/Header-->
+    
+    <div class = content-outline>
+
+        <div class="singlechoredisplayBOTTOM">
+            <div class="leftsideERROR">
+                <h4 class="ERRORheaderLEFT"> Add A New Chore? </i> </h4>
+                <br>
+                <h4 class="ERRORnote"> <i class="fas fa-exclamation-triangle"></i> ERROR: You must fill in all fields! </h4>
+                <br>
+                <h4 class="ERRORnote"><a href="/chorelor/add" class="ERRORbutton">Try Add New Chore again <i class="fas fa-plus-circle"></i></a></h4>
+            </div>
+
+        <br>
+            <div class="rightsideERROR">
+                <h4 class="ERRORheaderRIGHT"> View Chores Listing? </h4>     
+                <br>
+                <h4 class="ERRORnote"> <i class="fas fa-exclamation-triangle"></i> ERROR: Check if Chore Exists </h4>
+                <br>
+                <h4 class="ERRORnote"><a href="/chorelor/" class="ERRORbutton">Go to List of Chores <i class="far fa-list-alt"></i></a></h4>
+            </div>
+
+
+    </div>
+</main>
+    <!--/Main Site-->
+
+
+<!--Include Footer-->
+    <%- include('./partials/footer') %>
+<!--/Include Footer-->

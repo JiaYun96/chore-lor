@@ -1,0 +1,67 @@
+<!--Include Header-->
+<%- include('./partials/head') %>
+<!--/Include Header-->
+
+
+    <!--Main Site-->
+    <main id="site-main">
+    <div class="container">
+        <a href="/chorelor/cal" class="naviButtonCal"><i class="far fa-calendar-alt"></i></a>
+        <a href="/chorelor" class="naviButton"><i class="far fa-list-alt"></i> LIST ALL CHORES</a>
+
+    <!-- Header-->
+    <div class="page-title">
+    <h1 class="subheader">Chore Information <i class="fas fa-info-circle"></i></h1>
+    <h3 class="subsubheader">Swee la, I know liao!</h3>
+    </div>
+    <!--/Header-->
+
+    <!--Display Details-->
+<body>
+
+    <div class = content-outline>  
+               <br>
+                <h4 class="currentstatus"> <i class="far fa-comment"></i> <%= chores.status %> </i> </h4>   
+            <div class="singlechoredisplay">
+
+            <br>        
+                <h4 class="chorenameandarea"> <%= chores.chorename %> @ <%= chores.housearea %> </h4>
+
+            <br>
+            <div class="singlechoredisplayBOTTOM">
+                <div class="leftside">
+                    <h4 class="commentsheader"> COMMENTS </i> </h4>
+                    <br>
+                    <h4 class="comments"> <%= chores.comments %></h4>
+                </div>
+
+            <br>
+                <div class="rightside">
+                <h4 class="duedate"> DUE :  <%= chores.date %> </h4>     
+                        <br>
+                    <h4 class="starttime"> START :
+                        <br> 
+                        <%= chores.starttime %> </h4>
+                    <br>
+                        <h4 class="endtime"> END : 
+                        <br>
+                        <%= chores.endtime %> </h4>
+                    <br>
+
+                </div>
+
+            <br>
+            </div>
+        </div>
+    </div>
+
+</body>
+    <!--/Display Details-->
+    
+    
+    <!--/Main Site-->
+
+
+<!--Include Footer-->
+    <%- include('./partials/footer') %>
+<!--/Include Footer-->

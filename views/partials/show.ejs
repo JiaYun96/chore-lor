@@ -1,0 +1,49 @@
+<% for(var i = 0; i < chores.length; i++) { %>
+    <tr>
+        <td><%= chores[i].date %></td>
+        <td><%= chores[i].chorename %></td>
+        <td><%= chores[i].housearea %></td>
+        <td class="spacefortime"><%= chores[i].starttime %></td>
+        <td class="spacefortime"><%= chores[i].endtime %></td>
+        <td class="spaceformore"><%= chores[i].status %></td>
+        <td>
+
+        <a href="/chorelor/<%= chores[i]._id %>">
+            <span class="clickableIcon"><i class="fas fa-info-circle"></i></span>
+        </a>
+
+        <a href="/chorelor/<%= chores[i]._id%>/edit">
+            <span class="clickableIcon"><i class="far fa-edit"></i></span>
+        </a>
+
+        <a href="/chorelor/<%= chores[i]._id %>/delete">
+            <span class="clickableIcon"><i class="fas fa-trash-alt"></i></span>
+        </a>
+        
+    </td>    
+</tr>
+<% } %>
+
+<!-- <tr>
+    <td>06/12/20</td>
+    <td>Wash Dishes</td>
+    <td>Kitchen</td>
+    <td>14:00</td>
+    <td>14:30</td>
+    <td>Pending</td>
+    <td>
+
+        <a class="btn border-shadow showmore">
+            <span class="clickableIcon"><i class="fas fa-info-circle"></i></span>
+        </a>
+
+        <a href="/edit" class="btn border-shadow edit">
+            <span class="clickableIcon"></span><i class="far fa-edit"></i></span>
+        </a>
+        <a class="btn border-shadow delete">
+            <span class="clickableIcon"><i class="fas fa-trash-alt"></i></span>
+        </a>
+        
+    </td>
+</tr> -->
+

@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+/******************/
+/* Overall
+/*******************/
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body {
+    text-decoration: none;
+    font-family: 'Staatliches', cursive;
+}
+
+
+/******************/
+/* Head.EJS 
+/*******************/
+
+#site-main {
+    margin-top: 60px;
+    font-family: 'Staatliches', cursive;
+}
+
+#header {
+    background-color: #d6a506;
+    padding: 10px;
+    width: 100%;
+}
+
+.app-title {
+    text-align: center;
+}
+
+.app-title-header {
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.BLACKLINE {
+    background-color: black;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.quick-bar {
+    margin-top: 10px;
+    align-items:stretch;
+}
+
+.quickButton {
+    color: white;
+    background-color: darksalmon;
+    border-radius: 15px;
+    margin-left: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.naviButton {
+    background-color: darksalmon;
+    border-radius: 15px;
+    padding: 10px;
+    position: absolute;
+    right: 85px;
+    text-align: center;
+    width: 150px;
+}
+
+.naviButtonCal {
+    background-color: darksalmon;
+    border-radius: 15px;
+    padding: 10px;
+    position: absolute;
+    right: 35px;
+    text-align: center;
+    width: 45px;
+    display: inline;
+}
+
+.searchButton {
+    color: white;
+    background-color: darksalmon;
+    border-radius: 5px;
+    margin-left: -42px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Staatliches', cursive;
+}
+
+.searchBar {
+    color: black;
+    background-color: white;
+    /* border: none; */
+    border-radius: 5px;
+    margin-left: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Staatliches', cursive;
+    width: 300px;
+}
+
+.filter {
+    color:darksalmon;
+}
+
+
+/******************/
+/* Views (General)
+/*******************/
+
+.content-outline {
+    background-color: #f1d13f;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px 20px;    
+    font-weight: bold;
+}
+
+.page-title {
+    text-align: center;
+}
+
+.subheader {
+    color:#d6a506;
+}
+
+.subsubheader {
+    color:#d6a506;
+}
+
+.filter {
+    color: darksalmon;
+}
+
+.error {
+    color: red;
+}
+
+/******************/
+/* Index.ejs
+/*******************/
+
+table {
+    border-spacing: 0px;
+    width: 100%;
+}
+
+.clickableIcon {
+    color: grey;
+    margin: 2px;
+}
+
+
+.table td, .table th {
+    padding: 10px;
+    vertical-align: top;
+    text-align: center;
+}
+
+tbody {
+    vertical-align: baseline;
+}
+
+tbody tr:hover {
+    background-color:#d6c106;
+}
+
+.tableheader {
+    background-color: black;
+    color: white;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.spacefortime {
+    width: 270px;
+}
+
+.spaceformore {
+    width: 100px;
+}
+
+/******************/
+/* FORM // Add Edit.ejs
+/*******************/
+
+.radio {
+    background-color:pink;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;    
+    font-weight: bold;
+}
+
+.form {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.form input[type="text"] {
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+    width: 270px;
+}
+
+.question {
+    margin-right: 15px;
+}
+
+.statuspending {
+    color:rgba(0, 89, 255, 0.651);
+}
+
+.statuscompleted {
+    color:teal;
+}
+
+.statuspostpone {
+    color:tomato;
+}
+
+.submitchoreButton {
+    width: 100%;
+    background-color: bisque;
+    border-color: white;
+    padding: 5px;
+    border-radius: 15px;
+    font-weight: bold;
+    width: 200px;
+}
+
+
+/******************/
+/* View.EJS 
+/*******************/
+
+.singlechoredisplay {
+    margin: 10px 170px;
+    background-color: #d6c106;
+    color: #942424;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 15px;
+}
+
+.singlechoredisplayBOTTOM {
+    display: flex;
+}
+
+.leftside {
+    width: 50%;
+    border-right-color: brown;
+}
+
+.rightside {
+    width: 50%;
+}
+
+.currentstatus {
+    font-size: 24px;
+    text-align: center;
+}
+
+.chorenameandarea {
+    font-size: 38px;
+    color: #942424;
+    text-align: center;
+}
+
+.duedate {
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    background-color :pink;
+    text-align: center;
+}
+
+.commentsheader {
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    background-color: bisque;
+    text-align: center;
+}
+
+.comments {
+    font-size: 24px;
+    color: black;
+    text-align: center;
+}
+
+.starttime {
+    color: #000000;
+    font-size: 14px;
+    text-align: center;
+}
+
+.endtime {
+    color: #000000;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/******************/
+/* error.EJS 
+/*******************/
+
+.singlechoredisplayBOTTOM {
+    display: flex;
+    align-items: stretch;
+}
+
+.leftsideERROR {
+    width: 50%;
+    border-right-color: brown;
+}
+
+.rightsideERROR {
+    width: 50%;
+}
+
+.ERRORheaderLEFT {
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    background-color: bisque;
+    text-align: center;
+}
+
+.ERRORheaderRIGHT {
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(233, 183, 47);
+    text-align: center;
+}
+
+.ERRORnote {
+    font-size: 18px;
+    color: red;
+    text-align: center;
+}
+
+.ERRORbutton {
+    background-color: darksalmon;
+    color: black;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    width: 150px;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr { 
+        border: 1px solid var(--border);
+    }
+
+    td {
+        border: none;
+        position: relative;
+    }
+
+}

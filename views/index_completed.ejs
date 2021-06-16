@@ -1,0 +1,55 @@
+<!--Include Header-->
+<%- include('./partials/head') %>
+<!--/Include Header-->
+
+<!--Main Site-->
+
+<main id="site-main">
+    <div class="container">
+            <a href="/chorelor/cal" class="naviButtonCal"><i class="far fa-calendar-alt"></i></a>
+            <a href="/chorelor/add" class="naviButton"><i class="fas fa-plus-circle"></i> ADD NEW CHORE </a>
+
+    <!-- Header-->
+    <div class="page-title">
+    <h1 class="subheader filter">COMPLETED <i class="far fa-calendar-check"></i></h1>
+    <h3 class="subsubheader filter">WAH can liao la! Just delete le lor!</h3>
+    </div>
+    <!--/Header-->
+    
+    <div class = content-outline>
+    <!--Form Handling-->
+    <form action="/chorelor" method="POST">
+    <table class="table">
+        <thead class="tableheader">
+            <tr>
+                <th>Due Date</th>
+                <th>Chore Name</th>
+                <th>House Area <i class="fas fa-home"></i></th>
+                <th class="spacefortime">Start Time</th>
+                <th class="spacefortime">End Time</th>
+                <th>Status <i class="far fa-comment"></i></th>
+                <th class="spaceformore">More</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!--Include DataBase-->
+            <ul>
+            <%- include('./partials/show', {chores: chores}) %>
+            </ul>
+
+            <!--/Include DataBase-->
+        </tbody>
+    </table>
+    
+    </form>
+</div>
+
+    </div>
+</main>
+    <!--/Main Site-->
+
+
+<!--Include Footer-->
+    <%- include('./partials/footer') %>
+<!--/Include Footer-->
