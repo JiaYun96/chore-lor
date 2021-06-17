@@ -68,5 +68,10 @@ https://chore-lor.herokuapp.com/chorelor
 
 
 
+Challenges Faced during the Project/Further Improvements:
+1. Setting up FullCalendar.
+2. Identifying how to use .aggregate
+3. JavaScript RegExp gi Modifier - do a case insensitive search of all occurrences of a regular expression in a string.
+
 
 
